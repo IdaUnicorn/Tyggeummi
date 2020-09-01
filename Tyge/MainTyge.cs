@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,25 +44,40 @@ namespace Tyge
             {
                 Console.WriteLine(item.antal); //udskriver kun antal
             }
-
+        
             foreach (Tyggegum item in program) // går igennem hele listen. $ fordi så kan jeg have mere end en property at vise 
 
             {
                 Console.WriteLine($"{item.smag}, {item.antal}");
             }
-                Random random = new Random();
 
-            for (int i = 0; i < 50
-                
-                ; i++)
+            // nu udskriv 55 tilfældige tyggegummier i tilfældig rækkefølge.
+            Console.WriteLine("55 tilfældige tyggegummier i tilfældig rækkefølge");
+
+
+            Random random = new Random();
+            List<Tyggegum> heleliste = new List<Tyggegum>(); //laver ny liste
+
+            for (int i = 0; i < 55; i++)
             {
-            int tilfeldig = random.Next(program.Count);
+                int tilfeldig = random.Next(program.Count);
                 Console.WriteLine(program[tilfeldig].smag);
-                Console.ReadKey();  
+                heleliste.Add(program[tilfeldig]);//adder til min liste
             }
-            }
+            Console.WriteLine("now remove a chewing gum, and print how many chewing gums is left");
+            Console.WriteLine(heleliste.Count()); //printer hvor mange der er i min liste.
+            Console.ReadKey();
+
+            //remove a random chewing gum from the list, and print how many chewing gums is left.
+            heleliste.RemoveAt(random.Next(heleliste.Count));
+            Console.WriteLine(heleliste.Count()); //printer hvor mange der er i min liste.
+            Console.ReadKey();
+        }
+
         
         }
+
+
     }
 
 
