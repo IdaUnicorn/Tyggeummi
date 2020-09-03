@@ -65,7 +65,7 @@ namespace Tyge
                 heleliste.Add(program[tilfeldig]);//adder til min liste
             }
             Console.WriteLine("now remove a chewing gum, and print how many chewing gums is left");
-            Console.WriteLine(heleliste.Count()); //printer hvor mange der er i min liste.
+            Console.WriteLine(heleliste.Count - 1); //printer hvor mange der er i min liste.
             Console.ReadKey();
 
             //remove a random chewing gum from the list, and print how many chewing gums is left.
